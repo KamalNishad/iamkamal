@@ -20,6 +20,8 @@ import {
   Menu,
   X,
   Code2,
+  Download,
+  FileText,
 } from 'lucide-react'
 
 /* ---------- Magnetic Hover Physics Component ---------- */
@@ -144,6 +146,17 @@ function Navbar() {
             <span>Available for Projects</span>
           </div>
 
+          <a
+            href={`${import.meta.env.BASE_URL}Kamal_Kewat_Resume.pdf`}
+            download="Kamal_Kewat_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full glass-pill border border-white/10 text-slate-300 hover:text-white hover:border-cyan-400/50 text-xs font-semibold uppercase tracking-wider transition-all"
+          >
+            <Download size={13} className="text-cyan-400" />
+            <span>Resume</span>
+          </a>
+
           <a href="#contact" className="btn-cyan text-xs py-2 px-5 font-semibold">
             <span>Let&apos;s Talk</span>
             <ArrowUpRight size={14} />
@@ -183,6 +196,17 @@ function Navbar() {
                 {item.label}
               </a>
             ))}
+            <a
+              href={`${import.meta.env.BASE_URL}Kamal_Kewat_Resume.pdf`}
+              download="Kamal_Kewat_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 py-2.5 px-4 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-heading font-semibold uppercase tracking-wider flex items-center justify-center gap-2"
+            >
+              <Download size={14} />
+              <span>Download Resume (PDF)</span>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -263,7 +287,17 @@ function HeroSection() {
         </FadeIn>
 
         <FadeIn delay={0.6} className="flex flex-wrap items-center justify-center gap-4">
-          <a href="#projects" className="btn-cyan">
+          <a
+            href={`${import.meta.env.BASE_URL}Kamal_Kewat_Resume.pdf`}
+            download="Kamal_Kewat_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-cyan flex items-center gap-2"
+          >
+            <Download size={15} />
+            <span>Download CV</span>
+          </a>
+          <a href="#projects" className="btn-outline-glass">
             <span>View Projects</span>
             <ArrowDown size={15} />
           </a>
@@ -631,6 +665,29 @@ function AboutSection() {
           </p>
         </FadeIn>
       </div>
+
+      {/* Quick Resume Download Action */}
+      <FadeIn delay={0.5} className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-2xl glass-card border border-cyan-500/20 bg-gradient-to-r from-cyan-500/5 via-indigo-500/5 to-transparent">
+        <div className="flex items-center gap-4 text-center sm:text-left">
+          <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0 hidden sm:flex">
+            <FileText size={24} />
+          </div>
+          <div>
+            <h4 className="text-lg font-heading font-bold text-white">Need My Complete Work History &amp; Credentials?</h4>
+            <p className="text-xs text-slate-400 font-light mt-0.5">Download my verified resume (PDF) detailing government projects, tech stack, and full employment history.</p>
+          </div>
+        </div>
+        <a
+          href={`${import.meta.env.BASE_URL}Kamal_Kewat_Resume.pdf`}
+          download="Kamal_Kewat_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="btn-cyan text-xs py-3 px-6 shrink-0 flex items-center gap-2"
+        >
+          <Download size={15} />
+          <span>Download Resume (PDF)</span>
+        </a>
+      </FadeIn>
     </section>
   )
 }
@@ -1034,6 +1091,16 @@ function ContactSection() {
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Kamal Kewat. All rights reserved.</p>
           <div className="flex items-center gap-6 font-mono">
+            <a
+              href={`${import.meta.env.BASE_URL}Kamal_Kewat_Resume.pdf`}
+              download="Kamal_Kewat_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-cyan-400 hover:underline flex items-center gap-1"
+            >
+              <Download size={13} />
+              <span>Resume</span>
+            </a>
             <a href="https://github.com/KamalNishad" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition-colors">
               GitHub
             </a>
